@@ -1,4 +1,5 @@
 #jQuery Chord Transpose Plugin
+
 This jQuery plugin will add a toolbar to any plain text guitar chord music chart allowing the user to transpose the chords of the song with a single click.
 
 ##Example Usage
