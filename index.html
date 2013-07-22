@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jquery-chord-transposer : jQuery plugin that converts adds the ability to transpose chords in a plain text song" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jquery-chord-transposer</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jessegavin/jQuery-Chord-Transposer">View on GitHub</a>
+
+          <h1 id="project_title">Jquery-chord-transposer</h1>
+          <h2 id="project_tagline">jQuery plugin that converts adds the ability to transpose chords in a plain text song</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jessegavin/jQuery-Chord-Transposer/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jessegavin/jQuery-Chord-Transposer/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="jquery-chord-transpose-plugin" class="anchor" href="#jquery-chord-transpose-plugin"><span class="octicon octicon-link"></span></a>jQuery Chord Transpose Plugin</h1>
+
+<p>This jQuery plugin will add a toolbar to any plain text guitar chord music chart allowing the user to transpose the chords of the song with a single click.</p>
+
+<h2>
+<a name="example-usage" class="anchor" href="#example-usage"><span class="octicon octicon-link"></span></a>Example Usage</h2>
+
+<p>Suppose you have HTML markup like the following.</p>
+
+<pre><code>&lt;pre data-key="C"&gt;
+       C              G                 Am          F
+When I find myself in times of trouble, Mother Mary comes to me
+C                 G              F   C/E   Dm   C
+Speaking words of wisdom, let it be
+
+    C             G                Am                F
+And in my hour of darkness, She is standing right in front of me
+C                 G              F   C/E   Dm   C
+Speaking words of wisdom, let it be
+
+       Am         G          F          C
+Let it be, let it be, let it be, let it be
+                 G              F   C/E   Dm   C
+Whisper words of wisdom, let it be
+&lt;/pre&gt;
+</code></pre>
+
+<p>You would simply use the plugin like this.</p>
+
+<pre><code>&lt;script type="text/javascript" src="jquery.transpose.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $(function() {
+    $("pre").transpose();
+  });
+&lt;/script&gt;
+</code></pre>
+
+<p>By default, the script will try to determine the starting key of the song by looking for a data-key attribute on the containing element. However, you have the option of specifying the starting key with a settings object like the following example.</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+  $(function() {
+    $("pre").transpose({ key : 'C' });
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="plugin-requirements" class="anchor" href="#plugin-requirements"><span class="octicon octicon-link"></span></a>Plugin Requirements</h2>
+
+<p>The element you're targeting is either a <code>&lt;pre&gt;</code> tag or uses the <code>white-space: pre</code> CSS declaration.
+The font is monospaced. It really won't be useful otherwise since the chords are position over the correct text using white space.
+Lines with chords contain chords only. The script will examine each bit of text on the line to see if it matches a regular expression which is meant to find chords. If any chunk of text in that line does not match, it will be skipped. The only non-alphanumeric character that is allowed on chord lines (beside <code>#</code>) is / when it is used to show a chord with a bass note like <code>G/B</code>.</p>
+
+<h3>
+<a name="regarding-chord-spacing" class="anchor" href="#regarding-chord-spacing"><span class="octicon octicon-link"></span></a>Regarding chord spacing</h3>
+
+<p>Always make sure that chords (that don't have a sharp <code>#</code> or flat <code>b</code> after them) are followed by at least two spaces otherwise the chords might get 'smushed' together when transposed. In the following example, if the song were transposed from <code>G</code> to <code>F#</code>, the white space which follows the G chord will be taken up by the <code>#</code> character (same is true with D chord).</p>
+
+<pre><code>G C    D G    &gt;&gt;&gt;   F#B    C#F#
+I love music  &gt;&gt;&gt;   I love music
+</code></pre>
+
+<p>If you have at least two spaces after each chord, this will not happen. Here's a suggested change for the previous example.</p>
+
+<pre><code>G  C    D  G    &gt;&gt;&gt;   F# B    C# F#
+I  love mu-sic  &gt;&gt;&gt;   I  love mu-sic
+</code></pre>
+
+<p>Chords like G/B should have at least three spaces following them because if the song were transposed to <code>F#</code> the chord would take a total of five characters <code>F#/A#</code> instead of the original three.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jquery-chord-transposer maintained by <a href="https://github.com/jessegavin">jessegavin</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-72869-15");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
