@@ -222,7 +222,7 @@
       $(this).before(keysHtml);
 
       var output = [];
-      var lines = $(this).text().split("\n");
+      var lines = $(this).text().split(/\r\n|\n/g);
       var line, tmp = "";
 
       for (var i = 0; i < lines.length; i++) {
