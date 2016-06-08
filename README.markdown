@@ -49,7 +49,8 @@ Always make sure that chords (that don't have a sharp `#` or flat `b` after them
 
     G C    D G    >>>   F#B    C#F#
     I love music  >>>   I love music
-    If you have at least two spaces after each chord, this will not happen. Here's a suggested change for the previous example.
+    
+If you have at least two spaces after each chord, this will not happen. Here's a suggested change for the previous example.
 
     G  C    D  G    >>>   F# B    C# F#
     I  love mu-sic  >>>   I  love mu-sic
