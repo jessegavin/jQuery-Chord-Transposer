@@ -26,7 +26,7 @@ Suppose you have HTML markup like the following.
 
 You would simply use the plugin like this.
 
-    <script type="text/javascript" src="jquery.transpose.js"></script>
+    <script type="text/javascript" src="jquery.transposer.js"></script>
     <script type="text/javascript">
       $(function() {
         $("pre").transpose();
